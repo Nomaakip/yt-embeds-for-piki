@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube Embeds For Pikidiary
 // @namespace    http://nomaakip.github.io/
-// @version      0.0.2
+// @version      0.0.3
 // @description  Adds youtube embeds for PikiDiary
 // @author       hacks.guide
 // @match        https://pikidiary.lol/*
@@ -24,8 +24,10 @@
         });
     }
 
-    document.body.addEventListener('click', function() {
-        setTimeout(checkLinks, 5000);
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            setTimeout(checkLinks, 5000);
+        });
     });
     checkLinks();
 })();
